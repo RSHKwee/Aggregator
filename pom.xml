@@ -10,6 +10,7 @@
     <module>library</module>
     <module>garminSummary</module>
     <module>ing2ofx</module>
+    <module>replaceTool</module>
   </modules>
 
   <properties>
