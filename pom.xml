@@ -28,8 +28,12 @@
 	<assertj.version>3.11.1</assertj.version>
     <launch4j-maven-plugin.version>2.1.2</launch4j-maven-plugin.version>
     <jsign-maven-plugin.version>4.0</jsign-maven-plugin.version>
-
+	
     <miglayout.version>3.7.4</miglayout.version>
+    <javafx.version>11</javafx.version>
+    <javafx-graphics.version>11</javafx-graphics.version>
+    <javafx-controls.version>11.0.2</javafx-controls.version>
+
     <kweeLibrary.version>0.0.2.0</kweeLibrary.version>
   </properties>
   
@@ -64,20 +68,20 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx</artifactId>
-      <version>11</version>
+      <version>${javafx.version}</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
-      <artifactId>javafx-graphics </artifactId>
-      <version>11</version>
+      <artifactId>javafx-graphics</artifactId>
+      <version>${javafx-graphics.version}</version>
       <classifier>win</classifier>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>11.0.2</version>
+      <version>${javafx-controls.version}</version>
     </dependency>
   </dependencies>
   
