@@ -30,9 +30,9 @@
     <jsign-maven-plugin.version>4.0</jsign-maven-plugin.version>
 	
     <miglayout.version>3.7.4</miglayout.version>
-    <javafx.version>11</javafx.version>
-    <javafx-graphics.version>11</javafx-graphics.version>
-    <javafx-controls.version>11.0.2</javafx-controls.version>
+    <javafx.version>20</javafx.version>
+    <javafx-graphics.version>20</javafx-graphics.version>
+    <javafx-controls.version>20</javafx-controls.version>
 
     <kweeLibrary.version>0.0.2.0</kweeLibrary.version>
   </properties>
@@ -83,10 +83,23 @@
       <artifactId>javafx-controls</artifactId>
       <version>${javafx-controls.version}</version>
     </dependency>
+    <!-- AssertJ Swing -->
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-swing-junit</artifactId>
       <version>3.9.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-swing</artifactId>
+      <version>3.9.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.19.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
