@@ -15,6 +15,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.url>tools</project.url>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven.compiler.source>17</maven.compiler.source>
@@ -120,6 +121,12 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.9.1</version>
+          <configuration>
+            <site>
+             <id>default</id>
+             <url>${project.url}</url>
+            </site>
+          </configuration>
           <executions>
             <execution>
               <id>attach-site</id>
