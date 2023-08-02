@@ -11,6 +11,7 @@
     <module>garminSummary</module>
     <module>ing2ofx</module>
     <module>replaceTool</module>
+    <module>reformat</module>
   </modules>
 
   <properties>
