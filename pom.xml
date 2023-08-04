@@ -13,7 +13,7 @@
     <module>replaceTool</module>
     <module>reformat</module>
   </modules>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.url>tools</project.url>
@@ -41,14 +41,18 @@
   
   <repositories>
     <repository>
-        <id>mvn-repo</id>
-        <url>https://github.com/RSHKwee/library/releases</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+      <id>mvn-repo</id>
+      <url>https://github.com/RSHKwee/library/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
   
