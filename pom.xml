@@ -12,6 +12,7 @@
     <module>ing2ofx</module>
     <module>replaceTool</module>
     <module>reformat</module>
+    <module>gnucashcharts</module>
   </modules>
   
   <properties>
