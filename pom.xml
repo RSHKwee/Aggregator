@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>0.0.4.0</version>
+  <version>1.0.0.0</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
@@ -37,7 +37,7 @@
     <javafx-graphics.version>20</javafx-graphics.version>
     <javafx-controls.version>20</javafx-controls.version>
 
-    <kweeLibrary.version>0.0.5.0</kweeLibrary.version>
+    <kweeLibrary.version>1.0.0.0</kweeLibrary.version>
   </properties>
   
   <repositories>
