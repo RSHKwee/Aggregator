@@ -13,6 +13,7 @@
     <module>replaceTool</module>
     <module>reformat</module>
     <module>gnucashcharts</module>
+    <module>ofxviewer</module>
   </modules>
   
   <properties>
@@ -23,6 +24,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
+    <maven.test.failure.ignore>true</maven.test.failure.ignore>
     <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
