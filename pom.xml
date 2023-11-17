@@ -39,8 +39,8 @@
     <javafx-graphics.version>20</javafx-graphics.version>
     <javafx-controls.version>20</javafx-controls.version>
 
-    <kweeLibrary.version>1.0.0.0</kweeLibrary.version>
-    <kweeIng2Ofx.version>1.0.0.0</kweeIng2Ofx.version> 
+    <kweeLibrary.version>1.0.0.1</kweeLibrary.version>
+    <kweeIng2Ofx.version>1.0.0.1</kweeIng2Ofx.version> 
   </properties>
   
   <repositories>
