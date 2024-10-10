@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.0.0.1</version>
+  <version>1.1.0.0</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
@@ -21,7 +21,7 @@
     <project.url>tools</project.url>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.source>22</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
@@ -39,8 +39,8 @@
     <javafx-graphics.version>20</javafx-graphics.version>
     <javafx-controls.version>20</javafx-controls.version>
 
-    <kweeLibrary.version>1.0.0.1</kweeLibrary.version>
-    <kweeIng2Ofx.version>1.0.0.1</kweeIng2Ofx.version> 
+    <kweeLibrary.version>1.1.0.0</kweeLibrary.version>
+    <kweeIng2Ofx.version>1.1.0.0</kweeIng2Ofx.version> 
   </properties>
   
   <repositories>
