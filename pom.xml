@@ -29,7 +29,7 @@
     <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
 
- 	<junit.version>4.12</junit.version>
+ 	<junit.version>4.13.2</junit.version>
 	<assertj.version>3.11.1</assertj.version>
     <launch4j-maven-plugin.version>2.1.2</launch4j-maven-plugin.version>
     <jsign-maven-plugin.version>4.0</jsign-maven-plugin.version>
