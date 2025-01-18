@@ -6,6 +6,10 @@
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
+  <prerequisites>
+    <maven>3.6.3</maven>
+  </prerequisites>
+
   <modules>
     <module>library</module>
     <module>garminSummary</module>
@@ -20,19 +24,19 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.url>tools</project.url>
 
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven.compiler.source>22</maven.compiler.source>
     <maven.compiler.target>22</maven.compiler.target>
 
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
-    <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
-    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+    <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
 
  	<junit.version>4.13.2</junit.version>
 	<assertj.version>3.11.1</assertj.version>
-    <launch4j-maven-plugin.version>2.1.2</launch4j-maven-plugin.version>
-    <jsign-maven-plugin.version>4.0</jsign-maven-plugin.version>
+    <launch4j-maven-plugin.version>2.5.2</launch4j-maven-plugin.version>
+    <jsign-maven-plugin.version>7.0</jsign-maven-plugin.version>
 	
     <miglayout.version>3.7.4</miglayout.version>
     <javafx.version>20</javafx.version>
@@ -119,6 +123,27 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.5.0</version> <!-- Gebruik een geschikte versie van de plugin -->
+          <executions>
+            <execution>
+              <id>enforce-maven-version</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                   <version>[3.6.3,)</version> <!-- Minimale Maven-versie vereist -->
+                  </requireMavenVersion>
+                </rules>
+                <fail>false</fail> <!-- Niet Stoppen de build bij niet-naleving -->
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
           <configuration>
@@ -149,7 +174,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
+          <version>3.5.2</version>
           <configuration>
             <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
             <testFailureIgnore>true</testFailureIgnore>
@@ -160,7 +185,7 @@
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>versions-maven-plugin</artifactId>
-            <version>2.15.0</version> <!-- Controleer voor de laatste versie -->
+            <version>2.18.0</version> <!-- Controleer voor de laatste versie -->
         </plugin>
       </plugins>
     </pluginManagement>
@@ -171,7 +196,7 @@
 	  <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		  <artifactId>maven-surefire-report-plugin</artifactId>
-		  <version>3.0.0-M5</version>
+		  <version>3.4.0</version>
           <reportSets>
                 <reportSet>
                     <id>aggregated-unit-test-report</id>
