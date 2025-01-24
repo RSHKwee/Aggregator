@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.1.0.0</version>
+  <version>1.1.0.1</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
@@ -21,6 +21,9 @@
   </modules>
   
   <properties>
+    <kweeLibrary.version>1.1.0.1</kweeLibrary.version>
+    <kweeIng2Ofx.version>1.1.0.1</kweeIng2Ofx.version> 
+
     <maven.min.version>3.6.3</maven.min.version>
   
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,14 +60,12 @@
 
     <com-webcohesion-ofx4j.version>1.38</com-webcohesion-ofx4j.version>
     <slf4j.version>2.0.16</slf4j.version>
+    <log4j-slf4j-impl.version>2.20.0</log4j-slf4j-impl.version>
     <org-apache-poi-poi.version>5.4.0</org-apache-poi-poi.version>
     <org-apache-poi-ooxml.version>5.4.0</org-apache-poi-ooxml.version>
     <org-apache-pdfbox-pdfbox.version>2.0.32</org-apache-pdfbox-pdfbox.version>
     <com-itextpdf-itextpdf.version>5.5.13.4</com-itextpdf-itextpdf.version>
     <org-jsoup-jsoup.version>1.18.3</org-jsoup-jsoup.version>  
-    
-    <kweeLibrary.version>1.1.0.0</kweeLibrary.version>
-    <kweeIng2Ofx.version>1.1.0.0</kweeIng2Ofx.version> 
   </properties>
   
   <repositories>
