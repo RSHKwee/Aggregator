@@ -38,7 +38,7 @@
     <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
     <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
     <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
+    <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
     <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven-surefirereport-plugin.version>3.4.0</maven-surefirereport-plugin.version>
 
