@@ -2,9 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.1.0.0</version>
+  <version>1.1.0.1</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
+
+  <prerequisites>
+    <maven>${maven.min.version}</maven>
+  </prerequisites>
 
   <modules>
     <module>library</module>
@@ -17,30 +21,51 @@
   </modules>
   
   <properties>
+    <kweeLibrary.version>1.1.0.1</kweeLibrary.version>
+    <kweeIng2Ofx.version>1.1.0.1</kweeIng2Ofx.version> 
+
+    <maven.min.version>3.6.3</maven.min.version>
+  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.url>tools</project.url>
 
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven.compiler.source>22</maven.compiler.source>
     <maven.compiler.target>22</maven.compiler.target>
 
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
-    <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
-    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+    <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+    <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    <maven-surefirereport-plugin.version>3.4.0</maven-surefirereport-plugin.version>
 
  	<junit.version>4.13.2</junit.version>
 	<assertj.version>3.11.1</assertj.version>
-    <launch4j-maven-plugin.version>2.1.2</launch4j-maven-plugin.version>
-    <jsign-maven-plugin.version>4.0</jsign-maven-plugin.version>
+  	<assertj-core.version>3.27.3</assertj-core.version>
+  	<assertj-swing.version>3.17.1</assertj-swing.version>
+  	<assertj-swing-test.version>3.17.1</assertj-swing-test.version>
+  
+    <launch4j-maven-plugin.version>2.5.2</launch4j-maven-plugin.version>
+    <jsign-maven-plugin.version>7.0</jsign-maven-plugin.version>
+	<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
+    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
 	
     <miglayout.version>3.7.4</miglayout.version>
-    <javafx.version>20</javafx.version>
-    <javafx-graphics.version>20</javafx-graphics.version>
-    <javafx-controls.version>20</javafx-controls.version>
+    <javafx.version>23.0.1</javafx.version>
+    <javafx-graphics.version>23.0.1</javafx-graphics.version>
+    <javafx-controls.version>23.0.1</javafx-controls.version>
 
-    <kweeLibrary.version>1.1.0.0</kweeLibrary.version>
-    <kweeIng2Ofx.version>1.1.0.0</kweeIng2Ofx.version> 
+    <com-webcohesion-ofx4j.version>1.38</com-webcohesion-ofx4j.version>
+    <slf4j.version>2.0.16</slf4j.version>
+    <log4j-slf4j-impl.version>2.20.0</log4j-slf4j-impl.version>
+    <org-apache-poi-poi.version>5.4.0</org-apache-poi-poi.version>
+    <org-apache-poi-ooxml.version>5.4.0</org-apache-poi-ooxml.version>
+    <org-apache-pdfbox-pdfbox.version>2.0.32</org-apache-pdfbox-pdfbox.version>
+    <com-itextpdf-itextpdf.version>5.5.13.4</com-itextpdf-itextpdf.version>
+    <org-jsoup-jsoup.version>1.18.3</org-jsoup-jsoup.version>  
   </properties>
   
   <repositories>
@@ -97,19 +122,19 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-swing-junit</artifactId>
-      <version>3.9.2</version>
+      <version>${assertj-swing-test.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-swing</artifactId>
-      <version>3.9.2</version>
+      <version>${assertj-swing.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.19.0</version>
+      <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -117,6 +142,27 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin.version}</version> <!-- Gebruik een geschikte versie van de plugin -->
+          <executions>
+            <execution>
+              <id>enforce-maven-version</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                   <version>${maven.min.version}</version> <!-- Minimale Maven-versie vereist -->
+                  </requireMavenVersion>
+                </rules>
+                <fail>false</fail> <!-- Niet Stoppen de build bij niet-naleving -->
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -129,7 +175,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.9.1</version>
+          <version>${maven-site-plugin.version}</version>
           <configuration>
             <site>
              <id>default</id>
@@ -149,13 +195,18 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
+          <version>${maven-surefire-plugin.version}</version>
           <configuration>
             <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
             <testFailureIgnore>true</testFailureIgnore>
             <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
             <summaryFile>${project.build.directory}/surefire-reports/summary.txt</summaryFile>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin.version}</version> <!-- Controleer voor de laatste versie -->
         </plugin>
       </plugins>
     </pluginManagement>
@@ -166,7 +217,7 @@
 	  <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		  <artifactId>maven-surefire-report-plugin</artifactId>
-		  <version>3.0.0-M5</version>
+		  <version>${maven-surefirereport-plugin.version}</version>
           <reportSets>
                 <reportSet>
                     <id>aggregated-unit-test-report</id>
