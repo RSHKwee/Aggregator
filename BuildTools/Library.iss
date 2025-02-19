@@ -34,6 +34,7 @@ end;
 function ExtractMajorVersion(const VersionString: string): Integer;
 var
   StartPos, EndPos: Integer;
+  MidVersionStr : string;
   MajorVersionStr : string;
 begin
   Result := 0; // Standaard als parsing mislukt
@@ -43,12 +44,21 @@ begin
   begin
     Inc(StartPos); // Verplaats naar eerste cijfer
     EndPos := Pos('"', Copy(VersionString, StartPos, Length(VersionString))); // Zoek tweede quote binnen substring
-
+    // Log(Format(' Startpos: %d ; EndPos: %d ', [StartPos, Endpos]));
     if EndPos > 0 then
     begin
       EndPos := EndPos + StartPos - 1; // Pas de positie aan t.o.v. originele string
-      MajorVersionStr := Copy(VersionString, StartPos, EndPos - StartPos);
+      MidVersionStr := Copy(VersionString, StartPos, EndPos - StartPos);
+      EndPos := Pos('.', MidVersionStr); // Zoek eerste dubbele quote
+      // Log(Format(' EndPos MidVersionStr: %d ', [Endpos]));
+      if (EndPos > 0) then
+      begin
+        MajorVersionStr := Copy(MidVersionStr, 1, EndPos - 1);
+      end else begin
+        MajorVersionStr := Copy(MidVersionStr, 1 , Length(MidVersionStr));
+      end;
       Result := StrToIntDef(MajorVersionStr, 0); // Converteer naar integer
+      // Log(Format(' MajorVersionstr: %s ; Result: %d ', [MajorVersionStr, Result]));
     end;
   end;
 end;
@@ -143,10 +153,10 @@ begin
     if CheckJavaVersion (G_JavaMinVersion) then
     begin
       L_jreNotPresent := false;
-      UpdateStatusMessage('Java jre is present.');
+      Log('Java jre is present.');
     end else begin
       L_jreNotPresent := true;
-      UpdateStatusMessage('Java jre is not present, install JRE and define JAVA_HOME.');
+      Log('Java jre is not present, install JRE and define JAVA_HOME.');
     end;
     jreNotChecked := false;
   end;
