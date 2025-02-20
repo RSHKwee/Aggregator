@@ -14,8 +14,8 @@
 
   <modules>
     <module>library</module>
-    <module>garminSummary</module>
     <module>ing2ofx</module>
+    <module>garminSummary</module>
     <module>replaceTool</module>
     <module>reformat</module>
     <module>gnucashcharts</module>
@@ -43,6 +43,7 @@
     <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
     <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven-surefirereport-plugin.version>3.4.0</maven-surefirereport-plugin.version>
+    <maven-antrun-pluginversion>3.1.0</maven-antrun-pluginversion>
 
  	<junit.version>4.13.2</junit.version>
 	<assertj.version>3.11.1</assertj.version>
