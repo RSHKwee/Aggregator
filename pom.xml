@@ -4,7 +4,7 @@
   
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.1.0.2-SNAPSHOT</version>
+  <version>1.1.0.2</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
@@ -23,7 +23,7 @@
   </modules>
   
   <properties>
-    <kweeLibrary.version>1.1.0.2-SNAPSHOT</kweeLibrary.version>
+    <kweeLibrary.version>1.1.0.2</kweeLibrary.version>
     <kweeIng2Ofx.version>1.1.0.2</kweeIng2Ofx.version> 
 
     <maven.min.version>3.6.3</maven.min.version>
