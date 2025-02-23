@@ -4,13 +4,9 @@
   
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.1.0.2</version>
+  <version>1.1.0.3</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
-
-  <prerequisites>
-    <maven>${maven.min.version}</maven>
-  </prerequisites>
 
   <modules>
     <module>library</module>
@@ -23,8 +19,8 @@
   </modules>
   
   <properties>
-    <kweeLibrary.version>1.1.0.2</kweeLibrary.version>
-    <kweeIng2Ofx.version>1.1.0.2</kweeIng2Ofx.version> 
+    <kweeLibrary.version>1.1.0.3</kweeLibrary.version>
+    <kweeIng2Ofx.version>1.1.0.3</kweeIng2Ofx.version> 
 
     <maven.min.version>3.6.3</maven.min.version>
   
