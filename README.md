@@ -5,6 +5,7 @@ The following tools are used and should be installed in advance:
 - HTML Workshop version 4.74.8702.0 is used, for generating and maintaining the Help files (.chm).
 - InnoSetup 6.4.0 is used, for creating the windows installers.
 
+Aggregator is used by the following apps:
 ![Dependencies](./dependency-graph.png)
 
 Some Maven commands (cheatsheet):
