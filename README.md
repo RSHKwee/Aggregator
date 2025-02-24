@@ -9,6 +9,10 @@ The following tools are used and should be installed in advance:
 Aggregator is used by the following projects:
 ![Dependencies](./dependency-graph.png)
 
+This repository consists of:
+- Buildtools, these are a common library for InnoSetup scripts and some script files.
+- A JRE which is included in the installer.
+
 Some Maven commands (cheatsheet):
 - mvn clean install
   voor bouwen en run tests ook al falen enkele.....
