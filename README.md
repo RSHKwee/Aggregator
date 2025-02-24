@@ -14,10 +14,8 @@ This repository consists of:
 - A JRE which is included in the installer.
 
 Some Maven commands (cheatsheet):
-- mvn clean install
-  voor bouwen en run tests ook al falen enkele.....
-
-- mvn versions:display-dependency-updates
+- mvn clean install, for building and run tests.
+- mvn versions:display-dependency-updates, check Dependencies
 - mvn versions:display-plugin-updates
 - mvn versions:display-parent-updates
 - mvn versions:use-latest-releases
