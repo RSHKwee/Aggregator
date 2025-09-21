@@ -51,9 +51,9 @@
   	<assertj-swing-test.version>3.17.1</assertj-swing-test.version>
   
     <launch4j-maven-plugin.version>2.6.0</launch4j-maven-plugin.version>
-    <jsign-maven-plugin.version>7.0</jsign-maven-plugin.version>
+    <jsign-maven-plugin.version>7.2</jsign-maven-plugin.version>
 	<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
-    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
    
     <miglayout.version>3.7.4</miglayout.version>
     <javafx.version>23.0.1</javafx.version>
@@ -62,7 +62,8 @@
 
     <com-webcohesion-ofx4j.version>1.39-SNAPSHOT</com-webcohesion-ofx4j.version>
     <slf4j.version>2.0.9</slf4j.version>
-    <log4j-slf4j-impl.version>2.20.0</log4j-slf4j-impl.version>
+    <log4j-slf4j-impl.version>2.24.3</log4j-slf4j-impl.version>
+    
     <org-apache-poi-poi.version>5.4.0</org-apache-poi-poi.version>
     <org-apache-poi-ooxml.version>5.4.0</org-apache-poi-ooxml.version>
     <org-apache-pdfbox-pdfbox.version>2.0.32</org-apache-pdfbox-pdfbox.version>
