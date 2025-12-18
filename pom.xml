@@ -17,6 +17,7 @@
     <module>reformat</module>
     <module>ofxviewer</module>
     <module>ios_password</module>
+    <module>thunderbirdrulesort</module>
   </modules>
   
   <properties>
@@ -51,7 +52,7 @@
   	<assertj-swing-test.version>3.17.1</assertj-swing-test.version>
   
     <launch4j-maven-plugin.version>2.6.0</launch4j-maven-plugin.version>
-    <jsign-maven-plugin.version>7.2</jsign-maven-plugin.version>
+    <jsign-maven-plugin.version>7.3</jsign-maven-plugin.version>
 	<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
    
