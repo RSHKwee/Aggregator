@@ -16,6 +16,7 @@
     <module>replaceTool</module>
     <module>reformat</module>
     <module>ofxviewer</module>
+    <module>osmmapper</module>   
     <module>ios_password</module>
     <module>thunderbirdrulesort</module>
   </modules>
@@ -65,8 +66,12 @@
     <slf4j.version>2.0.9</slf4j.version>
     <log4j-slf4j-impl.version>2.24.3</log4j-slf4j-impl.version>
     
+    <org-apache-poi-poi.version>5.2.5</org-apache-poi-poi.version>
+    <org-apache-poi-ooxml.version>5.2.5</org-apache-poi-ooxml.version>
+<!--  
     <org-apache-poi-poi.version>5.4.0</org-apache-poi-poi.version>
     <org-apache-poi-ooxml.version>5.4.0</org-apache-poi-ooxml.version>
+-->
     <org-apache-pdfbox-pdfbox.version>2.0.32</org-apache-pdfbox-pdfbox.version>
     <com-itextpdf-itextpdf.version>5.5.13.4</com-itextpdf-itextpdf.version>
     <org-jsoup-jsoup.version>1.18.3</org-jsoup-jsoup.version>  
