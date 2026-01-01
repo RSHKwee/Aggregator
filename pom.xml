@@ -46,7 +46,9 @@
     <maven-surefirereport-plugin.version>3.4.0</maven-surefirereport-plugin.version>
     <maven-antrun-pluginversion>3.1.0</maven-antrun-pluginversion>
 
+    <jpackage-maven-plugin.version>1.7.1</jpackage-maven-plugin.version>
  	<junit.version>4.13.2</junit.version>
+    
 	<assertj.version>3.11.1</assertj.version>
   	<assertj-core.version>3.27.3</assertj-core.version>
   	<assertj-swing.version>3.17.1</assertj-swing.version>
