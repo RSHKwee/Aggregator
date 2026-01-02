@@ -14,10 +14,10 @@
     <module>garminSummary</module>
     <module>gnucashcharts</module>
     <module>replaceTool</module>
-    <module>reformat</module>
     <module>ofxviewer</module>
     <module>osmmapper</module>   
     <module>ios_password</module>
+    <module>reformat</module>
     <module>thunderbirdrulesort</module>
   </modules>
   

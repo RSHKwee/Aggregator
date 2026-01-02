@@ -28,3 +28,4 @@ Some Maven commands (cheatsheet):
 - _mvn com.github.ferstl:depgraph-maven-plugin:aggregate -DcreateImage -Dincludes=kwee_
 - _mvn install -DskipTests_
 
+
