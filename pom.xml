@@ -15,9 +15,10 @@
     <module>gnucashcharts</module>
     <module>replaceTool</module>
     <module>ofxviewer</module>
-    <module>osmmapper</module>   
+    <module>osmmapper</module>
+	<module>emailsender</module>
     <module>ios_password</module>
-    <module>reformat</module>
+<!--    <module>reformat</module> -->
     <module>thunderbirdrulesort</module>
   </modules>
   
@@ -26,6 +27,7 @@
 
     <kweeLibrary.version>1.1.0.3</kweeLibrary.version>
     <kweeIng2Ofx.version>1.1.0.3</kweeIng2Ofx.version> 
+    <kweeEmailSender.version>0.0.1.0</kweeEmailSender.version> 
 
     <maven.min.version>3.6.3</maven.min.version>
   
