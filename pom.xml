@@ -25,7 +25,7 @@
   <properties>
     <project.inceptionYear>2025</project.inceptionYear>
 
-    <kweeLibrary.version>1.1.0.3</kweeLibrary.version>
+    <kweeLibrary.version>1.1.0.4</kweeLibrary.version>
     <kweeIng2Ofx.version>1.1.0.3</kweeIng2Ofx.version> 
     <kweeEmailSender.version>0.0.1.0</kweeEmailSender.version> 
 
