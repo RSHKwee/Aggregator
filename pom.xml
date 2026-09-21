@@ -52,7 +52,7 @@
  	<junit.version>4.13.2</junit.version>
     
 	<assertj.version>3.11.1</assertj.version>
-  	<assertj-core.version>3.27.3</assertj-core.version>
+  	<assertj-core.version>3.17.1</assertj-core.version>
   	<assertj-swing.version>3.17.1</assertj-swing.version>
   	<assertj-swing-test.version>3.17.1</assertj-swing-test.version>
   
@@ -62,23 +62,55 @@
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
    
     <miglayout.version>3.7.4</miglayout.version>
-    <javafx.version>23.0.1</javafx.version>
-    <javafx-graphics.version>23.0.1</javafx-graphics.version>
-    <javafx-controls.version>23.0.1</javafx-controls.version>
+	
+    <javafx.version>27</javafx.version>
+    <javafx-graphics.version>27</javafx-graphics.version>
+    <javafx-controls.version>27</javafx-controls.version>
 
     <com-webcohesion-ofx4j.version>1.39-SNAPSHOT</com-webcohesion-ofx4j.version>
-    <slf4j.version>2.0.9</slf4j.version>
-    <log4j-slf4j-impl.version>2.24.3</log4j-slf4j-impl.version>
+    <slf4j.version>2.0.19</slf4j.version>
+    <log4j-slf4j-impl.version>2.26.1</log4j-slf4j-impl.version>
     
-    <org-apache-poi-poi.version>5.2.5</org-apache-poi-poi.version>
-    <org-apache-poi-ooxml.version>5.2.5</org-apache-poi-ooxml.version>
-<!--  
-    <org-apache-poi-poi.version>5.4.0</org-apache-poi-poi.version>
-    <org-apache-poi-ooxml.version>5.4.0</org-apache-poi-ooxml.version>
--->
-    <org-apache-pdfbox-pdfbox.version>2.0.32</org-apache-pdfbox-pdfbox.version>
-    <com-itextpdf-itextpdf.version>5.5.13.4</com-itextpdf-itextpdf.version>
-    <org-jsoup-jsoup.version>1.18.3</org-jsoup-jsoup.version>  
+    <org-apache-poi-poi.version>5.5.1</org-apache-poi-poi.version>
+    <org-apache-poi-ooxml.version>5.5.1</org-apache-poi-ooxml.version>
+
+    <org-apache-pdfbox-pdfbox.version>3.0.8</org-apache-pdfbox-pdfbox.version>
+    <com-itextpdf-itextpdf.version>5.5.13.6</com-itextpdf-itextpdf.version>
+    <org-jsoup-jsoup.version>1.23.2</org-jsoup-jsoup.version>
+	
+    <org-json-json.version>20260814</org-json-json.version>
+    <io-jenetics-jpx.version>4.0.1</io-jenetics-jpx.version>
+    <fr-dudie-nominatim-api.version>3.4</fr-dudie-nominatim-api.version>
+
+	<!-- ing2ofx-->
+    <com-opencsv.version>5.12.0</com-opencsv.version>
+    <commons-io.version>2.22.0</commons-io.version>
+    <commons-collections.version>3.2.2</commons-collections.version>
+    <commons-collections4.version>4.6.0</commons-collections4.version>
+    <org-javassist.version>3.33.0-GA</org-javassist.version>
+    <com-sun-xml-bind.version>4.0.9</com-sun-xml-bind.version>
+    <jakarta-xml-bind.version>4.0.2</jakarta-xml-bind.version>
+    <jaxb2-maven-plugin.version>3.2.0</jaxb2-maven-plugin.version>
+    <org-eclipse-core-resources.version>3.24.100</org-eclipse-core-resources.version>
+    <org-eclipse-core-runtime.version>3.35.0</org-eclipse-core-runtime.version>
+
+    <!-- Garminsummary -->
+    <io-jenitics-gpx.version>4.0.1</io-jenitics-gpx.version>
+
+    <!-- GNUCashCharts -->
+    <gnucash-api.version>1.1.0-SNAPSHOT</gnucash-api.version> 
+    <ch-qos-logback.version>1.6.3</ch-qos-logback.version>
+	
+    <!-- eMailSenderPro -->
+    <com.fasterxml.jackson.core.version>2.22.2</com.fasterxml.jackson.core.version> 
+    <jakarta-mail.version>2.0.2</jakarta-mail.version>
+    <jakarta-activation.version>2.0.1</jakarta-activation.version>
+    <com-formdev-flatlaf.version>3.7.2</com-formdev-flatlaf.version>
+    <org-apache-commons-commons-csv.version>1.14.1</org-apache-commons-commons-csv.version>
+
+    <!-- OSMMapper -->
+	<org-openstreetmap-gui-jmapviewer.version>2.1</org-openstreetmap-gui-jmapviewer.version>
+    <com.twelvemonkeys.imageio.imageio-jpeg.version>3.9.4</com.twelvemonkeys.imageio.imageio-jpeg.version>
   </properties>
   
   <repositories>
