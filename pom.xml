@@ -4,7 +4,7 @@
   
   <groupId>kwee</groupId>
   <artifactId>aggregator</artifactId>
-  <version>1.1.0.3</version>
+  <version>${revision}</version>
   <packaging>pom</packaging>
   <name>Aggregator</name>
 
@@ -23,12 +23,13 @@
   </modules>
   
   <properties>
-    <project.inceptionYear>2025</project.inceptionYear>
-
+    <project.inceptionYear>2026</project.inceptionYear>
+	<revision>1.2.0.0</revision>
+<!--
     <kweeLibrary.version>1.1.0.4</kweeLibrary.version>
     <kweeIng2Ofx.version>1.1.0.3</kweeIng2Ofx.version> 
     <kweeEmailSender.version>0.0.1.0</kweeEmailSender.version> 
-
+-->
     <maven.min.version>3.6.3</maven.min.version>
   
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -111,6 +112,8 @@
     <!-- OSMMapper -->
 	<org-openstreetmap-gui-jmapviewer.version>2.1</org-openstreetmap-gui-jmapviewer.version>
     <com.twelvemonkeys.imageio.imageio-jpeg.version>3.9.4</com.twelvemonkeys.imageio.imageio-jpeg.version>
+ 
+    <org-apache-maven-shade-plugin.version>3.6.0</org-apache-maven-shade-plugin.version>
   </properties>
   
   <repositories>
@@ -144,7 +147,9 @@
 	  <artifactId>miglayout</artifactId>
 	  <version>${miglayout.version}</version>
 	</dependency>
+	
 	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+<!--
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx</artifactId>
@@ -157,23 +162,36 @@
       <version>${javafx-graphics.version}</version>
       <classifier>win</classifier>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>${javafx-controls.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>${javafx-controls.version}</version>
-    </dependency>
+-->
+ 	
     <!-- AssertJ Swing -->
+	<!-- AssertJ Swing (miurahr fork) -->
+    <dependency>
+        <groupId>tokyo.northside</groupId>
+        <artifactId>assertj-swing-junit-jupiter</artifactId>
+        <version>4.0.0-beta-3</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.9.3</version> <!-- of een andere 5.x versie -->
+        <scope>test</scope>
+    </dependency>
+    <!-- Alleen nodig als je ook JUnit 4-tests hebt -->
+    <dependency>
+        <groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+        <version>5.9.3</version>
+        <scope>test</scope>
+    </dependency>
+<!--
     <dependency>
       <groupId>org.assertj</groupId>
-      <artifactId>assertj-swing-junit</artifactId>
+      <artifactId>assertj-swing-junit-jupiter</artifactId>
       <version>${assertj-swing-test.version}</version>
       <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
@@ -187,90 +205,124 @@
       <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
+	-->
   </dependencies>
   
   <build>
     <plugins>
-        <!-- Library -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven-enforcer-plugin.version}</version> <!-- Gebruik een geschikte versie van de plugin -->
-          <executions>
-            <execution>
-              <id>enforce-maven-version</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>${maven.min.version}</version> <!-- Minimale Maven-versie vereist -->
-                  </requireMavenVersion>
-                </rules>
-                <fail>false</fail> <!-- Niet Stoppen de build bij niet-naleving -->
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven-compiler-plugin.version}</version>
-          <configuration>
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>${maven-site-plugin.version}</version>
-          <configuration>
-            <site>
-             <id>default</id>
-             <url>${project.url}</url>
-            </site>
-          </configuration>
-          <executions>
-            <execution>
-              <id>attach-site</id>
-              <goals>
-                <goal>site</goal>
-              </goals>
-              <phase>post-integration-test</phase>
-            </execution>
-          </executions>    
-        </plugin>
-        <plugin>
-          <groupId>org.openjfx</groupId>
-          <artifactId>javafx-maven-plugin</artifactId>
-          <version>0.0.8</version>
-          <configuration>
-            <mainClass>your.main.Class</mainClass>
-            <options>
-              <option>--enable-native-access=ALL-UNNAMED</option>
-            </options>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin.version}</version>
-          <configuration>
-            <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-            <testFailureIgnore>true</testFailureIgnore>
-            <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-            <summaryFile>${project.build.directory}/surefire-reports/summary.txt</summaryFile>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>versions-maven-plugin</artifactId>
-          <version>${versions-maven-plugin.version}</version> <!-- Controleer voor de laatste versie -->
-        </plugin>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+            <force>true</force>
+        </configuration>
+      </plugin>
+      <!-- Library -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${maven-enforcer-plugin.version}</version> <!-- Gebruik een geschikte versie van de plugin -->
+        <executions>
+          <execution>
+            <id>enforce-maven-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>${maven.min.version}</version> <!-- Minimale Maven-versie vereist -->
+                </requireMavenVersion>
+              </rules>
+              <fail>false</fail> <!-- Niet Stoppen de build bij niet-naleving -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${maven-site-plugin.version}</version>
+        <configuration>
+          <site>
+           <id>default</id>
+           <url>${project.url}</url>
+          </site>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-site</id>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>post-integration-test</phase>
+          </execution>
+        </executions>    
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>your.main.Class</mainClass>
+          <options>
+            <option>--enable-native-access=ALL-UNNAMED</option>
+          </options>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+          <testFailureIgnore>true</testFailureIgnore>
+          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+          <summaryFile>${project.build.directory}/surefire-reports/summary.txt</summaryFile>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>${versions-maven-plugin.version}</version> <!-- Controleer voor de laatste versie -->
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <configuration>
+          <updatePomFile>true</updatePomFile>
+          <flattenMode>resolveCiFriendliesOnly</flattenMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
-   <!--   <directory>f:/temp/local_target/${project.artifactId}</directory>   -->
+    <!--   <directory>f:/temp/local_target/${project.artifactId}</directory>   -->
   </build>
   
   <reporting>
@@ -293,6 +345,7 @@
                 </reportSet>
             </reportSets>
 		</plugin>
+
 	</plugins>
   </reporting>
   
