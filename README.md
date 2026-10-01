@@ -80,5 +80,5 @@ Some Maven commands (cheatsheet):
 - _mvn io.github.floverfelt:pom-visualizer-maven-plugin:1.0.0:visualize_
 - _mvn com.github.ferstl:depgraph-maven-plugin:aggregate -DcreateImage -Dincludes=kwee_
 - _mvn install -DskipTests_
-
+- _mvn versions:display-property-updates_
 
