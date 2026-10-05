@@ -24,7 +24,7 @@
   
   <properties>
     <project.inceptionYear>2026</project.inceptionYear>
-	<revision>1.2.0.0</revision>
+	<revision>1.2.0.1</revision>
     <maven.min.version>3.6.3</maven.min.version>
   
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
