@@ -77,12 +77,16 @@
     <exec-maven-plugin.version>3.6.4</exec-maven-plugin.version>
     <codehaus-mojo.maven-plugin.version>1.8.0</codehaus-mojo.maven-plugin.version>
 
-    <miglayout.version>3.7.4</miglayout.version>
+    <miglayout.swing.version>11.5.1</miglayout.swing.version>
+    <miglayout.fx.version>11.5.1</miglayout.fx.version>
 	
+	<!-- 
+	     Is now part of Zulu FX
     <javafx.version>27</javafx.version>
     <javafx-graphics.version>27</javafx-graphics.version>
     <javafx-controls.version>27</javafx-controls.version>
-
+    -->
+	
     <com-webcohesion-ofx4j.version>1.39-SNAPSHOT</com-webcohesion-ofx4j.version>
     <slf4j.version>2.0.20</slf4j.version>
     <log4j-slf4j-impl.version>2.26.1</log4j-slf4j-impl.version>
@@ -154,22 +158,24 @@
   </repositories>
   
   <dependencies>
+	<!-- Source: https://mvnrepository.com/artifact/com.miglayout/miglayout-swing -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
+      <groupId>com.miglayout</groupId>
+      <artifactId>miglayout-swing</artifactId>
+      <version>${miglayout.swing.version}</version>
+      <scope>compile</scope>
     </dependency>
-
- 	<!-- https://mvnrepository.com/artifact/com.miglayout/miglayout -->
-    <dependency>
-	  <groupId>com.miglayout</groupId>
-	  <artifactId>miglayout</artifactId>
-	  <version>${miglayout.version}</version>
-	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
-<!--
+	<!-- Source: https://mvnrepository.com/artifact/com.miglayout/miglayout-javafx -->
+    <dependency>
+      <groupId>com.miglayout</groupId>
+      <artifactId>miglayout-javafx</artifactId>
+      <version>${miglayout.fx.version}</version>
+      <scope>compile</scope>
+    </dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -> see Zulu FX -->
+    <!--
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx</artifactId>
@@ -182,8 +188,15 @@
       <version>${javafx-graphics.version}</version>
       <classifier>win</classifier>
     </dependency>
--->
+    -->
  	
+	<!-- Scope Test, Test dependencies -->
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
     <!-- AssertJ Swing -->
 	<!-- AssertJ Swing (miurahr fork) -->
     <dependency>
@@ -195,7 +208,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit-jupiter-engine.version}</version> <!-- of een andere 5.x versie -->
+      <version>${junit-jupiter-engine.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- Alleen nodig als je ook JUnit 4-tests hebt -->
@@ -205,13 +218,12 @@
       <version>${junit-vintage-engine.version}</version>
       <scope>test</scope>
     </dependency>
-<!--
+    <!--
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-swing-junit-jupiter</artifactId>
       <version>${assertj-swing-test.version}</version>
       <scope>test</scope>
-
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
@@ -268,7 +280,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>${maven-enforcer-plugin.version}</version> <!-- Gebruik een geschikte versie van de plugin -->
+        <version>${maven-enforcer-plugin.version}</version>
         <executions>
           <execution>
             <id>enforce-maven-version</id>
@@ -295,14 +307,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>${maven-site-plugin.version}</version>
-        <configuration>
-         <!--
-         <site>
-           <id>default</id>
-           <url>${project.url}</url>
-          </site>
-		  -->
-        </configuration>
+        <configuration></configuration>
         <executions>
           <execution>
             <id>attach-site</id>
@@ -332,7 +337,6 @@
           <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
           <testFailureIgnore>true</testFailureIgnore>
           <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-   <!--       <summaryFile>${project.build.directory}/surefire-reports/summary.txt</summaryFile> -->
         </configuration>
       </plugin>
       <plugin>
