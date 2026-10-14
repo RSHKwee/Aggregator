@@ -31,6 +31,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.url>tools</project.url>
+	<project.version>${revision}</project.version>
 	<project.copyright.text>Copyright © 2026 RSH Kwee. Alle rechten voorbehouden.</project.copyright.text>
 	<revision>1.2.0.1</revision>
 	
