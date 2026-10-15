@@ -167,13 +167,14 @@
     </dependency>
 	
 	<!-- Source: https://mvnrepository.com/artifact/com.miglayout/miglayout-javafx -->
+	<!--
     <dependency>
       <groupId>com.miglayout</groupId>
       <artifactId>miglayout-javafx</artifactId>
       <version>${miglayout.fx.version}</version>
       <scope>compile</scope>
     </dependency>
-	
+	-->
 	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -> see Zulu FX -->
     <!--
     <dependency>
