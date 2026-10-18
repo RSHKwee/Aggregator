@@ -166,15 +166,6 @@
       <scope>compile</scope>
     </dependency>
 	
-	<!-- Source: https://mvnrepository.com/artifact/com.miglayout/miglayout-javafx -->
-	<!--
-    <dependency>
-      <groupId>com.miglayout</groupId>
-      <artifactId>miglayout-javafx</artifactId>
-      <version>${miglayout.fx.version}</version>
-      <scope>compile</scope>
-    </dependency>
-	-->
 	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx -> see Zulu FX -->
     <!--
     <dependency>
@@ -212,33 +203,6 @@
       <version>${junit-jupiter-engine.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- Alleen nodig als je ook JUnit 4-tests hebt -->
-    <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
-      <version>${junit-vintage-engine.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!--
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-swing-junit-jupiter</artifactId>
-      <version>${assertj-swing-test.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-swing</artifactId>
-      <version>${assertj-swing.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>${assertj-core.version}</version>
-      <scope>test</scope>
-    </dependency>
-	-->
   </dependencies>
   
   <build>
