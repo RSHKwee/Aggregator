@@ -4,7 +4,9 @@ Prerequisite for building the projects:
 
 The following tools are used and should be installed in advance:
 - _HTML Workshop_ (version 4.74.8702.0), is used for generating and maintaining the Help files (.chm).
-- _InnoSetup_ (version 6.4.0), is used for creating the windows installers.
+- _InnoSetup_ (version 6.6.1), is used for creating the windows installers.
+- _zulu 25.0.4.1+1_ (JDK FX), is used as Java distribution with FX support.
+- _Eclipse 2026-09 (4.41.0)_, is used as IDE.
 
 Build projects with command: _mvn clean install_
 
