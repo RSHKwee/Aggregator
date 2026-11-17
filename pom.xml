@@ -21,6 +21,7 @@
     <module>garminSummary</module>
     <module>gnucashcharts</module>
     <module>osmmapper</module>
+    <module>getmailconfig</module>
 	
     <module>ios_password</module>
     <module>ofxviewer</module>
@@ -90,9 +91,11 @@
     -->
 	
     <com-webcohesion-ofx4j.version>1.39-SNAPSHOT</com-webcohesion-ofx4j.version>
+
     <slf4j.version>2.0.20</slf4j.version>
+    <org.apache.logging.log4j.log4j-to-jul>2.25.2</org.apache.logging.log4j.log4j-to-jul>
     <log4j-slf4j-impl.version>2.26.1</log4j-slf4j-impl.version>
-    
+   
     <org-apache-poi-poi.version>5.5.1</org-apache-poi-poi.version>
     <org-apache-poi-ooxml.version>5.5.1</org-apache-poi-ooxml.version>
 
@@ -158,6 +161,16 @@
       </snapshots>
     </repository>
   </repositories>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   
   <dependencies>
 	<!-- Source: https://mvnrepository.com/artifact/com.miglayout/miglayout-swing -->
@@ -285,17 +298,7 @@
           </execution>
         </executions>    
       </plugin>
-      <plugin>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-maven-plugin</artifactId>
-        <version>0.0.8</version>
-        <configuration>
-          <mainClass>your.main.Class</mainClass>
-          <options>
-            <option>--enable-native-access=ALL-UNNAMED</option>
-          </options>
-        </configuration>
-      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
